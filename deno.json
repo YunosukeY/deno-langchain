@@ -10,7 +10,7 @@
     "test": "deno test"
   },
   "imports": {
-    "dotenv": "https://deno.land/std@0.224.0/dotenv/mod.ts",
-    "@langchain/openai": "npm:@langchain/openai@0.0.28"
+    "@langchain/openai": "npm:@langchain/openai@^0.0.28",
+    "@std/dotenv": "jsr:@std/dotenv@^0.224.0"
   }
 }

@@ -1,4 +1,4 @@
-import { load } from "dotenv";
+import { load } from "@std/dotenv";
 import { ChatOpenAI } from "@langchain/openai";
 
 if (import.meta.main) {
