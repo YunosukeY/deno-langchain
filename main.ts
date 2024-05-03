@@ -1,8 +1,15 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { load } from "dotenv";
+import { ChatOpenAI } from "@langchain/openai";
 
-// Learn more at https://deno.land/manual/examples/module_metadata#concepts
 if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
+  const env = await load();
+  const apiKey = env["OPENAI_API_KEY"];
+
+  const model = new ChatOpenAI({
+    temperature: 0.9,
+    apiKey,
+  });
+
+  const aiMessage = await model.invoke("what is LangSmith?");
+  console.log(aiMessage.content);
 }
